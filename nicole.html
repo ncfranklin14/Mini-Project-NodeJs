@@ -1,43 +1,4 @@
-const fs = require('fs');
-const inquirer = require('inquirer');
-
-inquirer
-.prompt([
-    {
-      type: 'input',
-      message: 'What is your name?',
-      name: 'name',
-    },
-    {
-      type: 'input',
-      message: 'Where do you live?',
-      name: 'location'
-    },
-    {
-      type: 'input',
-      message: 'Tell us about yourself',
-      name: 'bio',
-    },
-    {
-        type: 'input',
-        message: 'What is your LinkedIn?',
-        name: 'linkedin',
-      },
-      {
-        type: 'input',
-        message: 'What is your GitHub?',
-        name: 'github'
-      },
-      {
-        type: 'input',
-        message: 'What is your email?',
-        name: 'email',
-      },
-  ])  
-  .then((data) => {
-  const filename = `${data.name.toLowerCase().split(' ').join('')}.html`;
-//   use appendfile or writefile
-  fs.writeFile(filename, `<!DOCTYPE html>
+<!DOCTYPE html>
   <html lang="en">
   <head>
       <meta charset="UTF-8">
@@ -103,12 +64,12 @@ inquirer
                   <img src="./profile-42914__340.webp" alt="blank person profile pic">
               </div>
       <div class="col-6">
-      <h1 id= "name">${data.name}</h1>
-      <h2 id="location">${data.location}</h2>
-      <h3 id="bio">${data.bio}</h3>
-      <h4 id="github">${data.github}</h4>
-      <h4 id="linkedin">${data.linkedin}</h4>
-      <h4 id="email">${data.email}</h4>
+      <h1 id= "name">nicole</h1>
+      <h2 id="location">seattle</h2>
+      <h3 id="bio">something</h3>
+      <h4 id="github">git</h4>
+      <h4 id="linkedin">link</h4>
+      <h4 id="email">email</h4>
       </div>
       </div>  
   </div>
@@ -117,6 +78,4 @@ inquirer
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script src="./script.js"></script>
   </body>
-  </html>`, (err) =>
-  err ? console.error(err) : console.log('Commit logged!')
-)});
+  </html>
